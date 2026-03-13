@@ -79,3 +79,17 @@ console.log("=== ALERTAS DO SISTEMA ===");
 alertas.forEach((m) => {
   console.log(exibirMedicao(m));
 });
+
+function listarPorSensor(
+  medicoes: Medicao[],
+  sensor: Sensor
+): Medicao[] {
+  return medicoes.filter((m) => m.sensor.id === sensor.id);
+}
+const medicoesSensorMotor = listarPorSensor(listaMedicoes, sensorMotorA);
+ 
+console.log("=== MEDIÇÕES DO SENSOR MOTOR A ===");
+
+medicoesSensorMotor.forEach((m) => {
+  console.log(exibirMedicao(m));
+});
