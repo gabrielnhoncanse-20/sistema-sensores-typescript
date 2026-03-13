@@ -46,4 +46,13 @@ console.log("=== MEDIÇÃO 1 ===");
 console.log(exibirMedicao(medicao1));
 console.log("=== MEDIÇÃO 2 ===");
 console.log(exibirMedicao(medicao2));
+function listarAlertas(medicoes) {
+    return medicoes.filter((m) => m.status === "alerta" || m.status === "critico");
+}
+const listaMedicoes = [medicao1, medicao2];
+const alertas = listarAlertas(listaMedicoes);
+console.log("=== ALERTAS DO SISTEMA ===");
+alertas.forEach((m) => {
+    console.log(exibirMedicao(m));
+});
 export {};
